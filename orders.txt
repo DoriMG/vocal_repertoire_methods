@@ -1,0 +1,12 @@
+Rodentia
+Artiodactyla
+Primates
+Carnivora
+Chiroptera
+Proboscidea
+Hyracoidea
+Diprotodontia
+Perissodactyla
+Eulipotyphla
+Dasyuromorphia
+Scandentia

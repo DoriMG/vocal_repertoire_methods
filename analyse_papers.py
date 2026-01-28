@@ -24,26 +24,7 @@ merged_data['Language'] = merged_data['Language'].fillna(value='not specified')
 merged_data['Language'] = merged_data['Language'].replace('not reported', 'not specified')
 merged_data['Language'] = merged_data['Language'].replace('SPPS', 'SPSS')
 
-## Merge all spellings of SASlab
-merged_data['Package'] = merged_data['Package'].replace('AVISOFT-SASLab Pro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('AvisoftSAS Lab Pro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft SAS Lab Pro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft-SASLab', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft SASLab Pro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft SASlab pro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft-SASLab Pro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft SASLab-Pro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft SASLabPro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft SASlab Pro', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft SASLab', 'Avisoft-SASLab Pro')
-merged_data['Package'] = merged_data['Package'].replace('Avisoft SASLab', 'Avisoft-SASLab Pro')
 
-# Resolve other spellings
-merged_data['Package'] = merged_data['Package'].replace('PRAAT', 'Praat')
-merged_data['Package'] = merged_data['Package'].replace('CANARY', 'Canary')
-merged_data['Package'] = merged_data['Package'].replace('Automatic Mouse Ultrasound Detector', 'A-MUD')
-merged_data['Package'] = merged_data['Package'].replace('Kay Sonagraph', 'Kay Sona-Graph')
-merged_data['Package'] = merged_data['Package'].replace('not reported', 'not specified')
 
 merged_data['n_animals'] = merged_data['Number of animals']
 merged_data['n_animals'] = merged_data['n_animals'].replace('unclear', -1)
@@ -73,7 +54,7 @@ merged_data['rep_size'] = merged_data['Repertoire size (hand, total)']
 merged_data['rep_size'] = merged_data['rep_size'].replace('unclear', -1)
 
 merged_data['juvenile'] = merged_data['juvenile'].fillna(value=0)
-
+merged_data=merged_data.rename(columns={"Analysis methods (only mark when used for analysis, so e.g. don't mark UMAP if it's ONLY used for visualization)": "analysis_methods"})
 
 # Output merged data
 merged_data.to_csv('merged_data.csv', index=False)  
@@ -153,8 +134,136 @@ temp = merged_data['n_recs_analysed'].values
 temp = [int(x) for x in temp if isinstance(x, str)]
 np.nanmedian(temp)
 
-# Merge the entries with multiple species
+###########################################################################
+# Number of feaatures
 
-# Columns with multiple entries to lists
+merged_no_dupes = merged_data.drop_duplicates(subset=['Rayyan ID'])
+temp_df = merged_no_dupes.dropna(subset=['analysis_methods'])
+all_no_feat = []
+rec = []
+for i, record in temp_df.iterrows():
+    no_features = record['Number of features']
+    if isinstance(no_features, str):
+        if no_features != 'unclear':
+            no_features = [int(x.strip()) for x in no_features.split(';')]
+            all_no_feat += no_features
+            rec += [i]*len(no_features)
+            
+no_features_df = pd.DataFrame({'rec_id':rec,
+                                  'features':all_no_feat})
 
-# Output demerged per plot type
+no_features_df.to_csv('no_features.csv', index=False)     
+
+########################################################################
+## Analysis software
+all_packages = []
+rec = []
+for i, record in temp_df.iterrows():
+    no_features = record['Package']
+    if isinstance(no_features, str):
+        for delim in ',;':
+            no_features = no_features.replace(delim, ',')
+            results = no_features.split(',')
+                    
+        no_features = [x.strip() for x in results]
+        all_packages += no_features
+        rec += [i]*len(no_features)
+        
+packages_df = pd.DataFrame({'rec_id':rec,
+                                  'package':all_packages})
+
+## Merge all spellings of SASlab
+packages_df['package'] = packages_df['package'].replace('AVISOFT-SASLab Pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('AvisoftSAS Lab Pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SAS Lab Pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft-SASLab', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SASLab Pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SASlab Pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SASlab pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft-SASLab Pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SASLab-Pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SASLabPro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SASlab Pro', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SASlab', 'Avisoft-SASLab')
+packages_df['package'] = packages_df['package'].replace('Avisoft SASLab', 'Avisoft-SASLab')
+
+# Resolve other spellings
+packages_df['package'] = packages_df['package'].replace('Batsound Pro', 'BatSound')
+packages_df['package'] = packages_df['package'].replace('Deepsqueak', 'DeepSqueak')
+packages_df['package'] = packages_df['package'].replace('Cool Edit Pro', 'Cool Edit')
+packages_df['package'] = packages_df['package'].replace('MIR Toolbox (MATLAB)', 'MATLAB')
+packages_df['package'] = packages_df['package'].replace('Raven Pro', 'Raven')
+packages_df['package'] = packages_df['package'].replace('SoundForge 7', 'SoundForge')
+packages_df['package'] = packages_df['package'].replace('Sound Forge', 'SoundForge')
+packages_df['package'] = packages_df['package'].replace('voicebox toolbox in Matlab', 'MATLAB')
+
+packages_df['package'] = packages_df['package'].replace('PRAAT', 'Praat')
+packages_df['package'] = packages_df['package'].replace('CANARY', 'Canary')
+packages_df['package'] = packages_df['package'].replace('Automatic Mouse Ultrasound Detector', 'A-MUD')
+packages_df['package'] = packages_df['package'].replace('Kay Sonagraph', 'Kay Sona-Graph')
+packages_df['package'] = packages_df['package'].replace('not reported', 'not specified')
+
+packages_df.to_csv('packages.csv', index=False)     
+
+###########################################################################
+
+merged_no_dupes = merged_data.drop_duplicates(subset=['Rayyan ID'])
+temp_df = merged_no_dupes.dropna(subset=['analysis_methods'])
+temp_df=temp_df.reset_index()
+all_no_feat = []
+rec = []
+analysis_df = temp_df[['Rayyan ID']].copy()
+analysis_df['duration'] = 0
+
+# syllables
+analysis_df['unit_duration'] = 0
+analysis_df['no_units'] = 0
+analysis_df['iui'] = 0
+analysis_df['unit_rate'] = 0
+
+# frequency
+analysis_df['F0'] = 0
+analysis_df['PF'] = 0
+
+# Other
+analysis_df['entropy'] = 0
+
+
+for i, record in temp_df.iterrows():
+    feats = record['Characteristics general']
+    if isinstance(feats, str):
+        feat = [x.strip() for x in feats.split(',')]
+        if 'duration' in feat:
+            analysis_df.at[i, 'duration'] = 1
+    # syllables
+    feats = record['Syllables/units']
+    if isinstance(feats, str):
+        feat = [x.strip() for x in feats.split(',')]
+        if 'unit duration'.strip() in feat:
+            analysis_df.at[i, 'unit_duration'] = 1
+        if 'number of units'.strip() in feat:
+            analysis_df.at[i, 'no_units'] = 1
+        if 'inter unit interval'.strip() in feat:
+            analysis_df.at[i, 'iui'] = 1
+        if 'unit range (units/s)'.strip() in feat:
+            analysis_df.at[i, 'unit_rate'] = 1
+    
+    #Frequency
+    feats = record['PRAAT measures']
+    if isinstance(feats, str):
+        if 'F0' in feats:
+            analysis_df.at[i, 'F0'] = 1
+    
+    feats = record['Custom measurement of:']
+    if isinstance(feats, str):
+        if 'F0' in feats:
+            analysis_df.at[i, 'F0'] = 1
+        if 'PF' in feats:
+            analysis_df.at[i, 'peak frequency'] = 1
+            
+    feats = record['Raven Pro measurements']
+    if isinstance(feats, str):
+        if 'entropy' in feats:
+            analysis_df.at[i, 'entropy'] = 1
+
+analysis_df.to_csv('features_included.csv', index=False)     

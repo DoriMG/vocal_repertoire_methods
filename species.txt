@@ -1,0 +1,197 @@
+Cuniculus paca
+Sus scrofa
+Rhinopithecus roxellana
+Alouatta pigra
+Varecia variegata
+Pteronura brasiliensis
+Macaca thibetana
+Arctocephalus pusillus
+Sapajus libidinosus
+Indri indri
+Otolemur garnettii
+Sapajus ﬂavius
+Pan paniscus
+Cynictis penicillata
+Cervus elaphus hispanicus
+Papio papio
+Cercopithecus mitis stulmanni
+Lepilemur sahamalaza
+Presbytis johnii
+Myotis macrodactylus
+Macaca mulatta
+Microcebus sambiranensis
+Hipposideros armiger
+Cercopithecus diana diana
+Macaca silenus
+Sapajus nigritus
+Elephas maximus
+Alouatta palliata
+Loxodonta cyclotis
+Papio ursinus
+Loxodonta africana
+Pan troglodytes
+Helogale parvula
+Procavia capensis
+Procolobus verus
+Cercocebus atys
+Cebus capucinus
+Meles meles
+Martes americana
+Mustela nivalis
+Macaca cyclopis
+Macaca fascicularis
+Macaca radiata
+Macaca fuscata
+Arctocephalus australis
+Colobus angolensis ruwenzorii
+Saccopteryx bilineata
+Nasalis larvatus
+Cercopithecus campbelli
+Cacajao melanocephalus
+Gorilla gorilla
+Monachus monachus
+Callithrix jacchus
+Cervus elaphus corsicanus
+Cervus elaphus
+Cervus nippon
+Cervus nippon taiouanus
+Miopithecus talapoin
+Plecturocebus moloch
+Urva auropunctata
+Proteles cristatus
+Callimico goeldii
+Mandrillus sphinx
+Lycaon pictus
+Marmota olympus
+Urocitellus beldingi
+Tamias striatus
+Chlorocebus pygerythrus
+Petaurus australis
+Galago senegalensis
+Dendrohyrax sp.
+Tarsius syrichta fraterculus
+Tarsius spectrum
+Callosciurus notatus
+Cynomys ludovicianus
+Glaucomys volans
+Sciurus carolinensis
+Sciurus niger rufiventer
+Spermophilus suslicus
+Neotamias townsendii
+Tamias sibiricus
+Tamiasciurus hudsonicus
+Urocitellus columbianus
+Saimiri oerstedi
+Spalacopus cyanus
+Spermophilus Tridecemlineatus
+Equus quagga
+Canis lupus pallipes
+Neotoma floridana smalli
+Eulemur macaco macaco
+Enhydra lutris nereis
+Neotoma albigula
+Rousettus aegyptiacus
+Rhabdomys pumilio
+Lemur catta
+Pongo pygmaeus wurmbii
+Mus musculus
+Meriones unguiculatus
+Murina leucogaster
+Cercocebus torquatus
+Cercopithecus neglectus
+Rattus norvegicus
+Rhinolophus ferrumequinum
+Felis domesticus
+Cercopithecus campbelli campbelli
+Mus musculus musculus
+Felis silvestris catus
+Mesocricetus auratus
+Suncus etruscus
+Eptesicus fuscus
+Mus caroli
+Kerodon rupestris
+Saimiri sciureus
+Rattus rattus
+Trachypithecus leucocephalus
+Mirza zaza
+Procyon lotor
+Mustela eversmanni
+Ctenomys talarum
+octodon degus
+Cavia aperea
+Hydrochoerus hydrochaeris
+Phyllostomus discolor
+Glossophaga soricina
+Ailurus fulgens
+Phodopus sungorus
+Mus musculus domesticus
+Pteronotus parnellii parnellii
+Myotis lucifugus
+Nasua nasua
+Saguinus oedipus oedipus
+Cavia porcellus
+Microcebus murinus
+Macaca nemestrina
+Saguinus fuscicollis
+Cebuella pygmaea
+Notomys alexis
+Otospermophilus beecheyi
+Dasyurus hallucatus
+Tupaia belangeri
+Glaucomys sabrinus
+Rattus fuscipes
+Reithrodontomys mexicanus
+Urocitellus elegans
+Macaca tonkeana
+Lontra longicaudis
+Dasyurus viverrinus
+Acinonyx jubatus
+Phoca largha
+Hippopotamus amphibius
+Macaca sylvanus
+Lutra lutra
+Ceratotherium simum cottoni
+Aonyx cinerea
+Diplomesodon pulchellum
+Eulemur coronatus
+Lontra canadensis
+Lagothrix lagothricha
+Speothos venaticus
+Theropithecus gelada
+Tadarida brasiliensis
+Poecilogale albinucha
+Suncus murinus
+Felis catus
+Atilax paludinosus
+Onychomys sp.
+Presbytis entellus
+Ictonyx striatus
+Rattus losea
+Cynomys leucurus
+Cynomys gunnisoni
+Notomys fuscus
+Notomys mitchellii
+Notomys cervinus
+Glossophaga commissarisi
+Spermophilus citellus
+Spermophilus fulvus
+Cerdocyon thous
+Chrysocyon brachyurus
+Microcebus rufus
+Galago moholi
+Callithrix geoffroyi
+Leontopithecus rosalia
+Saguinus geoffroyi
+Saguinus oedipus
+Mico argentatus
+Urocitellus richardsonii
+Urocitellus sp.
+Tamiasciurus douglasii
+Callosciurus caniceps
+Callosciurus nigrovittatus
+Cervus sp.
+Marmota caligata
+Marmota vancouverensis
+Macaca nigra
+Otolemur sp.
+Paragalago sp.
