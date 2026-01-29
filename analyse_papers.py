@@ -139,6 +139,7 @@ np.nanmedian(temp)
 
 merged_no_dupes = merged_data.drop_duplicates(subset=['Rayyan ID'])
 temp_df = merged_no_dupes.dropna(subset=['analysis_methods'])
+temp_df = temp_df[temp_df['Analysis based on:']!='spectrogram']
 all_no_feat = []
 rec = []
 for i, record in temp_df.iterrows():
@@ -209,6 +210,7 @@ packages_df.to_csv('packages.csv', index=False)
 
 merged_no_dupes = merged_data.drop_duplicates(subset=['Rayyan ID'])
 temp_df = merged_no_dupes.dropna(subset=['analysis_methods'])
+
 temp_df=temp_df.reset_index()
 all_no_feat = []
 rec = []
