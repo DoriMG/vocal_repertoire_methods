@@ -1,0 +1,107 @@
+Rayyan ID,methods,clustering,DFA,MDS,PCA,Classifier,Dimensionality reduction,Neural Network
+rayyan-305067170,LDA,0,1,0,0,0,0,0
+rayyan-305067742,hierarchical cluster analysis,1,0,0,0,0,0,0
+rayyan-305067080,DFA,0,1,0,0,0,0,0
+rayyan-305067090,DFA,0,1,0,0,0,0,0
+rayyan-305067091,"DFA, PCA, NbClust",1,1,0,1,0,0,0
+rayyan-305067094,"LDA, PERMANOVA, PCoA",0,1,0,1,0,0,0
+rayyan-305067095,"DFA, PCA, LDA",0,1,0,1,0,0,0
+rayyan-305067097,"LDA, Random Forest",0,1,0,0,1,0,0
+rayyan-305067099,DFA,0,1,0,0,0,0,0
+rayyan-305067104,DFA,0,1,0,0,0,0,0
+rayyan-305067116,DFA,0,1,0,0,0,0,0
+rayyan-305067163,DFA,0,1,0,0,0,0,0
+rayyan-305067190,"agglomerative hierarchical clustering, LMM",1,0,0,0,0,0,0
+rayyan-305067201,"DFA, two-step clustering",1,1,0,0,0,0,0
+rayyan-305067210,"DFA, PCA, agglomerative hierarchical clustering",1,1,0,1,0,0,0
+rayyan-305067231,"DFA, PCA, hierarchical clustering",1,1,0,1,0,0,0
+rayyan-305067281,"DFA, PCA",0,1,0,1,0,0,0
+rayyan-305067326,"LDA, linear predictive coding",0,1,0,0,0,0,0
+rayyan-305067332,"DFA, PCA",0,1,0,1,0,0,0
+rayyan-305067337,"LDA, K-means clustering, MDS",1,1,1,0,0,0,0
+rayyan-305067339,DFA,0,1,0,0,0,0,0
+rayyan-305067386,"PCA, two-step clustering",1,0,0,1,0,0,0
+rayyan-305067394,UPGMA,0,0,0,0,0,0,0
+rayyan-305067514,"DFA, PCA, GMM",0,1,0,1,0,0,0
+rayyan-305067532,DFA,0,1,0,0,0,0,0
+rayyan-305067679,DFA,0,1,0,0,0,0,0
+rayyan-305067770,t-SNE; multi-layer perceptron,0,0,0,0,0,1,1
+rayyan-305068102,Partitioning Around Medoids (PAM) clustering,1,0,0,0,0,0,0
+rayyan-380414578,DFA,0,1,0,0,0,0,0
+rayyan-380414579,"DFA, PCA",0,1,0,1,0,0,0
+rayyan-380414581,"DFA, two-step clustering",1,1,0,0,0,0,0
+rayyan-380414583,"DFA, agglomerative hierarchical clustering",1,1,0,0,0,0,0
+rayyan-380414588,DFA,0,1,0,0,0,0,0
+rayyan-380414589,DFA,0,1,0,0,0,0,0
+rayyan-380414611,"K-means clustering, fuzzy c-means; hierarchical clustering",1,0,0,0,0,0,0
+rayyan-380414613,DFA,0,1,0,0,0,0,0
+rayyan-380414636,"PCA, two-step clustering, K-means clustering",1,0,0,1,0,0,0
+rayyan-380414646,MCLUST,1,0,0,0,0,0,0
+rayyan-380414654,DFA,0,1,0,0,0,0,0
+rayyan-380414655,DFA,0,1,0,0,0,0,0
+rayyan-380414661,PCA,0,0,0,1,0,0,0
+rayyan-380414683,DFA,0,1,0,0,0,0,0
+rayyan-380414740,two-step clustering,1,0,0,0,0,0,0
+rayyan-380414751,multinomial regression analysis,0,0,0,0,0,0,0
+rayyan-380414770,DFA,0,1,0,0,0,0,0
+rayyan-380414797,PCA,0,0,0,1,0,0,0
+rayyan-380414800,UPGMA cluster analysis; matrix correlation,1,0,0,0,0,0,0
+rayyan-380414801,DFA,0,1,0,0,0,0,0
+rayyan-305067471,DFA,0,1,0,0,0,0,0
+rayyan-380414771,DFA,0,1,0,0,0,0,0
+rayyan-305067096,"CNN, UMAP, SHAP",0,0,0,0,0,1,1
+rayyan-305067102,"DFA, PCA, silhouette clustering, agglomerative hierarchical clustering",1,1,0,1,0,0,0
+rayyan-305067117,"DFA, PCA",0,1,0,1,0,0,0
+rayyan-305067126,Multidimensional scaling,0,0,1,0,0,0,0
+rayyan-305067392,"DFA, K-means clustering, ANN",1,1,0,0,0,0,1
+rayyan-305067081,DFA,0,1,0,0,0,0,0
+rayyan-305067127,"DFA, PCA, UMAP, hierarchical agglomerative clustering",1,1,0,1,0,1,0
+rayyan-305067139,K-means clustering,1,0,0,0,0,0,0
+rayyan-305067149,SVM,0,0,0,0,1,0,0
+rayyan-305067158,"UMAP, SVM, affinity propagation, C-means fuzzy clustering",1,0,0,0,1,1,0
+rayyan-305067169,"GMM clustering, VAE",1,0,0,0,0,1,1
+rayyan-305067179,"PCA, MDS",0,0,1,1,0,0,0
+rayyan-305067202,DFA,0,1,0,0,0,0,0
+rayyan-305067253,DFA,0,1,0,0,0,0,0
+rayyan-305067318,"PCA, MDS",0,0,1,1,0,0,0
+rayyan-305067342,"K-means clustering, DBSCAN",1,0,0,0,0,0,0
+rayyan-305067355,K-means clustering,1,0,0,0,0,0,0
+rayyan-305067372,"ANOSIM, MDS",0,0,1,0,0,0,0
+rayyan-305067430,PCA,0,0,0,1,0,0,0
+rayyan-305067516,"PCA, MDS",0,0,1,1,0,0,0
+rayyan-305067603,"UMAP, Fuzzy c-means clustering",1,0,0,0,0,1,0
+rayyan-305067862,DFA,0,1,0,0,0,0,0
+rayyan-308549144,"DFA, PCA",0,1,0,1,0,0,0
+rayyan-380414577,DFA,0,1,0,0,0,0,0
+rayyan-380414608,DFA,0,1,0,0,0,0,0
+rayyan-380414610,LDA,0,1,0,0,0,0,0
+rayyan-380414612,"DFA, k-medians clustering",1,1,0,0,0,0,0
+rayyan-380414615,DFA,0,1,0,0,0,0,0
+rayyan-380414623,"DFA, two-step clustering",1,1,0,0,0,0,0
+rayyan-380414634,cluster analysis,1,0,0,0,0,0,0
+rayyan-380414648,"DFA, MDS",0,1,1,0,0,0,0
+rayyan-380414649,"PCA, Classification and regression tree analysis (CART)",0,0,0,1,0,0,0
+rayyan-380414679,K-means clustering,1,0,0,0,0,0,0
+rayyan-380414692,Gaussian mixture models,0,0,0,0,0,0,0
+rayyan-380414713,DFA,0,1,0,0,0,0,0
+rayyan-380414725,Multidimensional Scaling,0,0,1,0,0,0,0
+rayyan-380414727,K-means clustering,1,0,0,0,0,0,0
+rayyan-380414783,PCA,0,0,0,1,0,0,0
+rayyan-380414805,DFA,0,1,0,0,0,0,0
+rayyan-305067161,PCA,0,0,0,1,0,0,0
+rayyan-305067259,Hierarchical clustering,1,0,0,0,0,0,0
+rayyan-305067312,K-means clustering,1,0,0,0,0,0,0
+rayyan-305067419,DFA,0,1,0,0,0,0,0
+rayyan-305067748,"DFA, UMAP, SVM; xgboost; NN",0,1,0,0,0,1,1
+rayyan-305067789,"DFA, PCA",0,1,0,0,0,0,0
+rayyan-380414576,"DFA, K-means clustering",1,1,0,0,0,0,0
+rayyan-380414596,multi-dimensional scaling,0,0,1,0,0,0,0
+rayyan-380414597,DFA,0,1,0,0,0,0,0
+rayyan-380414614,DFA,0,1,0,0,0,0,0
+rayyan-380414637,DFA,0,1,0,0,0,0,0
+rayyan-380414642,DFA,0,1,0,0,0,0,0
+rayyan-380414657,pDFA,0,1,0,0,0,0,0
+rayyan-380414662,DFA,0,1,0,0,0,0,0
+rayyan-380414673,Markov Model,0,0,0,0,0,0,0
+rayyan-305067467,"DFA, MANOVA",0,1,0,0,0,0,0
+rayyan-380414723,"K-means clustering, regional convolutional neural network",1,0,0,0,0,0,1
