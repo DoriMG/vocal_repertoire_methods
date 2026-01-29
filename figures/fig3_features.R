@@ -5,15 +5,6 @@ library(dplyr)
 
 out_folder = "figs"
 
-data_file =  "data/merged_data.csv"
-df_ori <- read.csv(data_file, header=TRUE, stringsAsFactors=TRUE)
-
-df = df_ori[!duplicated(df_ori$Rayyan.ID), ]
-df = df[df$Language!= 'N/A',]
-df = df[df$analysis_methods!= '',]
-
-write.csv(df,"data/analysis_df.csv", row.names = FALSE)
-
 
 # Package
 data_file =  "data/packages.csv"
@@ -41,3 +32,14 @@ no_feats = ggplot(no_feats_df, aes(features)) +
   labs(y ='Number of studies', x='Number of features')+
   theme_classic()
 no_feats
+
+# What features are used?
+data_file =  "data/features_included_manual.csv"
+feat_type_df <- read.csv(data_file, header=TRUE, stringsAsFactors=TRUE, sep=';')
+
+no_feats = ggplot(no_feats_df, aes(features)) +
+  geom_histogram()+
+  labs(y ='Number of studies', x='Number of features')+
+  theme_classic()
+no_feats
+
