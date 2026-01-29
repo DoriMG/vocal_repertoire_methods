@@ -269,3 +269,80 @@ for i, record in temp_df.iterrows():
             analysis_df.at[i, 'entropy'] = 1
 
 analysis_df.to_csv('features_included.csv', index=False)     
+
+########################################################################
+## Count number with multi unit
+
+merged_no_dupes = merged_data.drop_duplicates(subset=['Rayyan ID'])
+temp_df = merged_no_dupes.dropna(subset=['analysis_methods'])
+
+temp_df=temp_df[temp_df['Analysis based on:']!='spectrogram']
+
+np.sum(temp_df['Multi-unit calls?'] == 'All') + np.sum(temp_df['Multi-unit calls?'] == 'Some')
+
+########################################################################
+## Analysis software
+
+merged_no_dupes = merged_data.drop_duplicates(subset=['Rayyan ID'])
+temp_df = merged_no_dupes.dropna(subset=['analysis_methods'])
+
+all_packages = []
+rec = []
+for i, record in temp_df.iterrows():
+    no_features = record['Language']
+    if isinstance(no_features, str):
+        for delim in ',;':
+            no_features = no_features.replace(delim, ',')
+            results = no_features.split(',')
+                    
+        no_features = [x.strip() for x in results]
+        all_packages += no_features
+        rec += [i]*len(no_features)
+        
+languages_df = pd.DataFrame({'rec_id':rec,
+                                  'package':all_packages})
+
+## Merge all spellings
+languages_df['package'] = languages_df['package'].replace('Statistical Analysis System', 'SAS')
+languages_df['package'] = languages_df['package'].replace('Statistica', 'STATISTICA')
+
+
+languages_df.to_csv('data/analysis_programs.csv', index=False)     
+
+########################################################################
+## Analysis type
+
+merged_no_dupes = merged_data.drop_duplicates(subset=['Rayyan ID'])
+temp_df = merged_no_dupes.dropna(subset=['analysis_methods'])
+
+temp_df=temp_df.reset_index()
+all_no_feat = []
+rec = []
+methods_df = temp_df[['Rayyan ID']].copy()
+
+methods_df['methods'] = temp_df['analysis_methods']
+methods_df['clustering'] = 0
+# syllables
+methods_df['DFA'] = 0
+methods_df['MDS'] = 0
+
+
+
+for i, record in temp_df.iterrows():
+    feats = record['analysis_methods']
+
+    if isinstance(feats, str):
+        if 'clust' in feats:
+            methods_df.at[i, 'clustering'] = 1
+        if 'DFA' in feats:
+            methods_df.at[i, 'DFA'] = 1
+        if 'LDA' in feats:
+            methods_df.at[i, 'DFA'] = 1
+        if 'MDS' in feats:
+            methods_df.at[i, 'MDS'] = 1
+        if 'multi-dimensional scaling' in feats:
+            methods_df.at[i, 'MDS'] = 1
+        if 'Multidimensional Scaling' in feats:
+            methods_df.at[i, 'MDS'] = 1
+
+methods_df.to_csv('methods_included.csv', index=False) 
