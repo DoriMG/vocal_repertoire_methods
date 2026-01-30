@@ -346,3 +346,13 @@ for i, record in temp_df.iterrows():
             methods_df.at[i, 'MDS'] = 1
 
 methods_df.to_csv('methods_included.csv', index=False) 
+
+#################################################
+## Output list of papers with DFA
+
+dfa_data = pd.read_csv('figures/data/methods_df_manual.csv')
+dfa_only = dfa_data[dfa_data['DFA'] == 1]
+
+metadata_small = metadata[['title', 'key']]
+merged_dfa = pd.merge(dfa_only,metadata_small, left_on='Rayyan ID', right_on='key')
+merged_dfa.to_csv('merged_dfa.csv', index=False) 
