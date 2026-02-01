@@ -30,16 +30,7 @@ no_feats_df <- read.csv(data_file, header=TRUE, stringsAsFactors=TRUE)
 no_feats = ggplot(no_feats_df, aes(features)) +
   geom_histogram()+
   labs(y ='Number of studies', x='Number of features')+
-  theme_classic()
-no_feats
-
-# What features are used?
-data_file =  "data/features_included_manual.csv"
-feat_type_df <- read.csv(data_file, header=TRUE, stringsAsFactors=TRUE, sep=';')
-
-no_feats = ggplot(no_feats_df, aes(features)) +
-  geom_histogram()+
-  labs(y ='Number of studies', x='Number of features')+
+  scale_x_continuous(trans='log10')+
   theme_classic()
 no_feats
 
@@ -60,13 +51,37 @@ language = ggplot(analysis_df, aes(x = fct_infreq(combine_package), fill=fct_inf
 
 language
 
-# Analysis type
+# DFA accuracy
 
 
-fig1 = (package|no_feats)/
-  (language|data_avail)/
-  (open_access_time|data_avail_time)
-fig1
+
+fig3 = (package|no_feats)/
+  (plot_spacer()|language)
+
+fig3
 
 ggsave(file.path(out_folder,'fig3_analysis.pdf'),fig1, width = 8, height =10)
 ggsave(file.path(out_folder,'fig3_analysis.png'),fig1, width = 8, height =10)
+
+#### Supplementary
+
+# Number of features
+data_file =  "data/merged_dfa.csv"
+dfa_df <- read.csv(data_file, header=TRUE, stringsAsFactors=TRUE)
+
+dfa_acc = ggplot(dfa_df, aes(performance)) +
+  geom_histogram(binwidth=2.5)+
+  labs(y ='Number of studies', x='Accuracy')+
+  theme_classic()
+dfa_acc
+
+acc_vs_no = ggplot(dfa_df, aes(x= no_clust, y=performance)) +
+  geom_point()+
+  labs(x ='Number of types', y='Accuracy')+
+  theme_classic()
+acc_vs_no
+
+dfa_plot = dfa_acc+acc_vs_no
+
+ggsave(file.path(out_folder,'sfig_dfa.pdf'),dfa_plot, width = 8, height =5)
+ggsave(file.path(out_folder,'sfig_dfa.png'),dfa_plot, width = 8, height =5)

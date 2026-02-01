@@ -23,7 +23,7 @@ orders = ggplot(df_ori, aes(x = fct_infreq(Order), fill=fct_infreq(Order))) +
   labs(y ='Number of studies', x='Order', fill='Order')+
   theme_classic()+theme(axis.text.x=element_text(angle = 45, vjust = 1.0, hjust=1))
 orders
-
+temp = fct_infreq(df_ori$Order)
 # Open Access
 open_access = ggplot(df, aes(x = fct_infreq(Open.access), fill=Open.access)) +
   geom_bar()+
@@ -81,7 +81,7 @@ ggsave(file.path(out_folder,'fig1_record_chars.png'),fig1, width = 8, height =10
 ##################################################################################
 ## Supplementary
 ## Species per order
-data_file =  "species_per_order.csv"
+data_file =  "data/species_per_order.csv"
 df_spo <- read.csv(data_file, header=TRUE, stringsAsFactors=TRUE)
 order_order = levels(temp)
 species_per_order = ggplot(df_spo, aes(y=unique_species, x = factor(Order, order_order), fill=factor(Order, order_order))) +
@@ -102,3 +102,10 @@ journal = ggplot(df, aes(x = fct_infreq(combine_journal), fill=fct_infreq(combin
   labs(y ='Count', x='Journal', fill='Journal')+
   theme_classic()+theme(axis.text.x=element_blank())
 journal
+
+sfig = (species_per_order|journal)
+sfig
+
+ggsave(file.path(out_folder,'sfig_order_and_journal.pdf'),fig1, width = 8, height =5)
+ggsave(file.path(out_folder,'sfig_order_and_journal.png'),fig1, width = 8, height =5)
+
