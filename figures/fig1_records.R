@@ -106,6 +106,6 @@ journal
 sfig = (species_per_order|journal)
 sfig
 
-ggsave(file.path(out_folder,'sfig_order_and_journal.pdf'),fig1, width = 8, height =5)
-ggsave(file.path(out_folder,'sfig_order_and_journal.png'),fig1, width = 8, height =5)
+ggsave(file.path(out_folder,'sfig_order_and_journal.pdf'),sfig, width = 12, height =5)
+ggsave(file.path(out_folder,'sfig_order_and_journal.png'),sfig, width = 12, height =5)
 

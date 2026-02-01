@@ -60,8 +60,8 @@ fig3 = (package|no_feats)/
 
 fig3
 
-ggsave(file.path(out_folder,'fig3_analysis.pdf'),fig1, width = 8, height =10)
-ggsave(file.path(out_folder,'fig3_analysis.png'),fig1, width = 8, height =10)
+ggsave(file.path(out_folder,'fig3_analysis.pdf'),fig3, width = 8, height =6)
+ggsave(file.path(out_folder,'fig3_analysis.png'),fig3, width = 8, height =6)
 
 #### Supplementary
 
@@ -83,5 +83,5 @@ acc_vs_no
 
 dfa_plot = dfa_acc+acc_vs_no
 
-ggsave(file.path(out_folder,'sfig_dfa.pdf'),dfa_plot, width = 8, height =5)
-ggsave(file.path(out_folder,'sfig_dfa.png'),dfa_plot, width = 8, height =5)
+ggsave(file.path(out_folder,'sfig_dfa.pdf'),dfa_plot, width = 12, height =5)
+ggsave(file.path(out_folder,'sfig_dfa.png'),dfa_plot, width = 12, height =5)
