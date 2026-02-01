@@ -356,3 +356,5 @@ dfa_only = dfa_data[dfa_data['DFA'] == 1]
 metadata_small = metadata[['title', 'key']]
 merged_dfa = pd.merge(dfa_only,metadata_small, left_on='Rayyan ID', right_on='key')
 merged_dfa.to_csv('merged_dfa.csv', index=False) 
+
+###############################################

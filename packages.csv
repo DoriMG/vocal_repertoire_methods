@@ -23,12 +23,9 @@ rec_id,package
 26,MATLAB
 26,Praat
 28,Raven
-29,LMA
-29,Praat
 33,Luscinia
 34,Praat
 36,Raven
-37,LMA
 38,LMA
 39,LMA
 40,Waves+
@@ -41,14 +38,12 @@ rec_id,package
 56,BatSound
 57,LMA
 58,Spectrogram Version 16
-61,Cool Edit
 74,LMA
 74,Avisoft-SASLab
 77,Raven
 83,AnalookW
 88,SoundForge
 92,Voice-Identification 700 Sonagraph
-93,Kay Sona-Graph
 96,Tektronix 564B
 97,Praat
 98,not specified
@@ -87,13 +82,11 @@ rec_id,package
 176,Kay Sona-Graph
 177,MATLAB
 185,Raven
-187,Kay Sona-Graph
 189,Praat
 190,Praat
 191,STx
 191,Praat
 191,MATLAB
-192,Avisoft-SASLab
 195,Praat
 195,MATLAB
 196,Raven
