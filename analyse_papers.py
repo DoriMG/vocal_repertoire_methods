@@ -48,6 +48,8 @@ merged_data['n_recs_analysed'] = merged_data['Number of vocalizations (included 
 merged_data['n_recs_analysed'] = merged_data['n_recs_analysed'].replace('unknown', -1)
 merged_data['n_recs_analysed'] = merged_data['n_recs_analysed'].replace('unclear', -1)
 
+
+
 merged_data['juvenile'] = merged_data['Repertoire size (hand, juvenile) - indicate how many calls of total repertoire are juvenile ']
 
 merged_data['rep_size'] = merged_data['Repertoire size (hand, total)']
@@ -63,6 +65,14 @@ merged_data.to_csv('merged_data.csv', index=False)
 # Output unique species for tree of life
 np.savetxt('species.txt', merged_data['Species (Latin)'].unique(), fmt='%s')
 np.savetxt('orders.txt', merged_data['Order'].unique(), fmt='%s')
+
+##############################################################################
+## Count number of records with animal number reported
+temp = merged_data.dropna(subset=["n_animals"])
+temp['n_animals_int'] = temp['n_animals'].astype(int)
+temp = temp[temp['n_animals_int']>0]
+temp = temp.drop_duplicates(subset=['Rayyan ID'])
+
 
 #############################################################################
 ##Find the number of unique species per order
