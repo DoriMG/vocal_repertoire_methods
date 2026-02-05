@@ -91,7 +91,6 @@ species_per_order = ggplot(df_spo, aes(y=unique_species, x = factor(Order, order
 species_per_order
 
 
-
 df['combine_journal'] = df['journal']
 levels(df$combine_journal) <- c(levels(df$combine_journal),"Other")
 dt = table(df$journal)
@@ -102,6 +101,10 @@ journal = ggplot(df, aes(x = fct_infreq(combine_journal), fill=fct_infreq(combin
   labs(y ='Count', x='Journal', fill='Journal')+
   theme_classic()+theme(axis.text.x=element_blank())
 journal
+
+journal_count = df %>% count(journal)
+write.csv(journal_count,"data/journal_count.csv", row.names = FALSE)
+
 
 sfig = (species_per_order)
 sfig
