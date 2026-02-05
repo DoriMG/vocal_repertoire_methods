@@ -87,7 +87,7 @@ order_order = levels(temp)
 species_per_order = ggplot(df_spo, aes(y=unique_species, x = factor(Order, order_order), fill=factor(Order, order_order))) +
   geom_bar(stat="identity")+
   labs(y ='Number of species', x='Order', fill='Order')+
-  theme_classic()+theme(axis.text.x=element_text(angle = 45, vjust = 0.8, hjust=1))
+  theme_classic()+theme(axis.text.x=element_text(angle = 45, vjust = 0.8, hjust=1))+ theme(legend.position="none")
 species_per_order
 
 
@@ -103,9 +103,9 @@ journal = ggplot(df, aes(x = fct_infreq(combine_journal), fill=fct_infreq(combin
   theme_classic()+theme(axis.text.x=element_blank())
 journal
 
-sfig = (species_per_order|journal)
+sfig = (species_per_order)
 sfig
 
-ggsave(file.path(out_folder,'sfig_order_and_journal.pdf'),sfig, width = 12, height =5)
-ggsave(file.path(out_folder,'sfig_order_and_journal.png'),sfig, width = 12, height =5)
+ggsave(file.path(out_folder,'sfig_order_and_journal.pdf'),sfig, width = 8, height =5)
+ggsave(file.path(out_folder,'sfig_order_and_journal.png'),sfig, width = 8, height =5)
 
