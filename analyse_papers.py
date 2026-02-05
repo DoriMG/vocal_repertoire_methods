@@ -34,6 +34,7 @@ merged_data['n_animals'] = merged_data['n_animals'].replace('not reported', -1)
 # Resolve journals
 merged_data['journal'] = merged_data['journal'].str.lower()
 merged_data['journal'] = merged_data['journal'].replace('zeitschrift fur tierpsychologie', 'ethology')
+merged_data['journal'] = merged_data['journal'].replace('zeitschrift für tierpsychologie', 'ethology')
 merged_data['journal'] = merged_data['journal'].replace('ethology : formerly zeitschrift fur tierpsychologie', 'ethology')
 
 merged_data['journal'] = merged_data['journal'].replace('proceedings. biological sciences', 'proceedings of the royal society b')
@@ -41,7 +42,14 @@ merged_data['journal'] = merged_data['journal'].replace('proceedings of the roya
 merged_data['journal'] = merged_data['journal'].replace('zeitschrift fur saugetierkunde', 'zeitschrift für säugetierkunde')
 merged_data['journal'] = merged_data['journal'].replace('primates; journal of primatology', 'primates')
 merged_data['journal'] = merged_data['journal'].replace('primates; journal of primatology', 'primates')
+merged_data['journal'] = merged_data['journal'].replace('folia primatologica; international journal of primatology', 'folia primatologica')
+merged_data['journal'] = merged_data['journal'].replace('naturwissenschaften', 'die naturwissenschaften')
+merged_data['journal'] = merged_data['journal'].replace('zeitschrift für säugetierkunde', 'mammalian biology')
+merged_data['journal'] = merged_data['journal'].replace('naturwissenschaften', 'die naturwissenschaften')
+merged_data['journal'] = merged_data['journal'].replace('naturwissenschaften', 'die naturwissenschaften')
 
+
+merged_data['journal'] = merged_data['journal'].str.title()
 
 
 merged_data['n_recs_analysed'] = merged_data['Number of vocalizations (included in analysis)'].replace('not reported', -1)
