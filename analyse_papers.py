@@ -18,13 +18,13 @@ data = pd.read_csv('vocal_rep_review_v2.csv')
     
 merged_data = pd.merge(data,metadata, left_on='Rayyan ID', right_on='key')
 merged_data['Family'] = merged_data['Family'].str.strip()
+
+
 ## Clean data
 merged_data['Package'] = merged_data['Package'].fillna(value='not specified')
 merged_data['Language'] = merged_data['Language'].fillna(value='not specified')
 merged_data['Language'] = merged_data['Language'].replace('not reported', 'not specified')
 merged_data['Language'] = merged_data['Language'].replace('SPPS', 'SPSS')
-
-
 
 merged_data['n_animals'] = merged_data['Number of animals']
 merged_data['n_animals'] = merged_data['n_animals'].replace('unclear', -1)
@@ -50,8 +50,6 @@ merged_data['journal'] = merged_data['journal'].replace('naturwissenschaften', '
 
 
 merged_data['journal'] = merged_data['journal'].str.title()
-
-
 merged_data['n_recs_analysed'] = merged_data['Number of vocalizations (included in analysis)'].replace('not reported', -1)
 merged_data['n_recs_analysed'] = merged_data['n_recs_analysed'].replace('unknown', -1)
 merged_data['n_recs_analysed'] = merged_data['n_recs_analysed'].replace('unclear', -1)
@@ -59,7 +57,6 @@ merged_data['n_recs_analysed'] = merged_data['n_recs_analysed'].replace('unclear
 
 
 merged_data['juvenile'] = merged_data['Repertoire size (hand, juvenile) - indicate how many calls of total repertoire are juvenile ']
-
 merged_data['rep_size'] = merged_data['Repertoire size (hand, total)']
 merged_data['rep_size'] = merged_data['rep_size'].replace('unclear', -1)
 
@@ -88,7 +85,7 @@ temp = temp.drop_duplicates(subset=['Rayyan ID'])
 orders = merged_data['Order'].unique()
 no_species = []
 for order in orders:
-    no_species +=[len(merged_data[merged_data['Order'] == order]['Species (Latin)'].unique())]
+    no_species += [len(merged_data[merged_data['Order'] == order]['Species (Latin)'].unique())]
 
 species_per_order = pd.DataFrame({'Order':orders,
                                   'unique_species':no_species})
@@ -325,7 +322,7 @@ languages_df['package'] = languages_df['package'].replace('Statistical Analysis 
 languages_df['package'] = languages_df['package'].replace('Statistica', 'STATISTICA')
 
 
-languages_df.to_csv('data/analysis_programs.csv', index=False)     
+languages_df.to_csv('analysis_programs.csv', index=False)     
 
 ########################################################################
 ## Analysis type
