@@ -55,8 +55,8 @@ language
 
 
 
-fig3 = (package|no_feats)/
-  (plot_spacer()|language)
+fig3 = (plot_spacer()|package)/
+  (no_feats|language)
 
 fig3
 
