@@ -28,7 +28,7 @@ data_file =  "data/no_features.csv"
 no_feats_df <- read.csv(data_file, header=TRUE, stringsAsFactors=TRUE)
 
 no_feats = ggplot(no_feats_df, aes(features)) +
-  geom_histogram()+
+  geom_histogram(bins=30)+s
   labs(y ='Number of studies', x='Number of features')+
   scale_x_continuous(trans='log10')+
   theme_classic()
