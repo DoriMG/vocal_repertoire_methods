@@ -1,6 +1,8 @@
 library(ggplot2)
 library(patchwork)
 library(forcats)
+library(dplyr)
+library(ggpmisc)
 
 out_folder = "figs"
 
@@ -51,6 +53,10 @@ animals_over_time = ggplot(df_temp, aes(x = Year, y=n_animals)) +
   geom_point()+
   labs(x ='Year', y='Number of animals')+
   theme_classic()+
+  geom_smooth( method = 'lm',  color='black')+
+  stat_poly_eq(aes(label =paste(after_stat(rr.label),
+                                after_stat(p.value.label), sep = "*\", \"*")),
+               formula = y ~ x)+
   scale_y_continuous(trans='log10')
 animals_over_time
 
@@ -59,6 +65,10 @@ recs_over_time = ggplot(df_temp, aes(x = Year, y=n_recs_analysed)) +
   geom_point()+
   labs(x ='Year', y='Number of recordings')+
   theme_classic()+
+  geom_smooth( method = 'lm', color='black')+
+  stat_poly_eq(aes(label =paste(after_stat(rr.label),
+                                after_stat(p.value.label), sep = "*\", \"*")),
+               formula = y ~ x)+
   scale_y_continuous(trans='log10')
 recs_over_time
 
