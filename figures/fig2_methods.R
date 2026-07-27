@@ -33,19 +33,21 @@ df_ori <- read.csv(data_file, header=TRUE, stringsAsFactors=TRUE)
 
 df_temp = df_ori[df_ori['n_animals']>0,]
 n_animals = ggplot(df_temp, aes(n_animals)) +
-  geom_histogram(bins = 20)+
+  geom_histogram(bins = 20, fill="#a1a1a1ff")+
   scale_x_continuous(trans='log10')+
   labs(y ='Count', x='Animals N')+
-  theme_classic()
+  theme_classic()+
+  geom_vline(xintercept = 22.5, linetype="dashed") # median
 n_animals
 
 # Number of vocalizations
 df_temp = df_ori[df_ori['n_recs_analysed']>0,]
 n_recs_analysed = ggplot(df_temp, aes(n_recs_analysed)) +
-  geom_histogram(bins = 20)+
+  geom_histogram(bins = 20, fill="#a1a1a1ff")+
   scale_x_continuous(trans='log10')+
   labs(y ='Count', x='Vocalizations N')+
-  theme_classic()
+  theme_classic()+
+  geom_vline(xintercept = 679, linetype="dashed") # median
 n_recs_analysed
 
 ## Trends
