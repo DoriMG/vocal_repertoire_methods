@@ -2,6 +2,7 @@ library(ggplot2)
 library(patchwork)
 library(forcats)
 library(dplyr)
+library(ggpmisc)
 
 out_folder = "figs"
  
@@ -55,6 +56,9 @@ open_access_time = ggplot(open_access_grouped, aes(x = Year, y=Mean)) +
   geom_point()+
   labs(x ='Year', y='Open access papers (%)')+
   geom_smooth(data=dplyr::filter(open_access_grouped,Year>=2005), method = 'lm')+
+  stat_poly_eq(aes(label =paste(after_stat(rr.label),
+                                after_stat(p.value.label), sep = "*\", \"*")),
+               formula = y ~ x)+
   theme_classic()
 open_access_time
 
@@ -64,14 +68,18 @@ df[df$Data.availability=='No',]$data_available = 0
 data_grouped = df %>%
   group_by(Year) %>%
   summarize(Mean = mean(data_available, na.rm=TRUE))
+
 # 2014 first instance of data available
 data_grouped$Mean = data_grouped$Mean*100
 data_avail_time = ggplot(data_grouped, aes(x = Year, y=Mean)) +
   geom_point()+
   labs(x ='Year', y='Data available (%)')+
-  geom_smooth(data=dplyr::filter(data_grouped,Year>=2014), method = 'lm')+
+  geom_smooth(data=dplyr::filter(data_grouped,Year>=2005), method = 'lm')+
   theme_classic()+
-  coord_cartesian(ylim=c(0, 100))
+  coord_cartesian(ylim=c(0, 100))+
+  stat_poly_eq(aes(label =paste(after_stat(rr.label),
+                                          after_stat(p.value.label), sep = "*\", \"*")),
+               formula = y ~ x)
 data_avail_time
 
 fig1 = (year|orders)/
