@@ -122,6 +122,6 @@ write.csv(journal_count,"data/journal_count.csv", row.names = FALSE)
 sfig = (species_per_order)
 sfig
 
-ggsave(file.path(out_folder,'sfig_order_and_journal.pdf'),sfig, width = 8, height =5)
-ggsave(file.path(out_folder,'sfig_order_and_journal.png'),sfig, width = 8, height =5)
+ggsave(file.path(out_folder,'sfig_order_and_journal.pdf'),sfig, width = 6, height =4)
+ggsave(file.path(out_folder,'sfig_order_and_journal.png'),sfig, width = 6, height =4)
 
